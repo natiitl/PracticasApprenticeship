@@ -21,6 +21,8 @@ public class Game {
             board.print();
            // putPosition(position);
        // }
+        if(lastPlayer == Player.PLAYER_X) lastPlayer = Player.PLAYER_O;
+        else if(lastPlayer == Player.PLAYER_O) lastPlayer = Player.PLAYER_X;
 
     }
 

@@ -5,9 +5,7 @@ import Exception.CellNotEmptyException;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.*;
 
-
-
-public class TiktaktoeShould {
+public class TicTacToeShould {
     Console console;
     PrintBoard printBoard;
     Game game;
@@ -29,5 +27,12 @@ public class TiktaktoeShould {
     public void raise_error_when_cell_is_not_empty() {
         game.putPosition(Position.POSITION00);
         assertThrows(CellNotEmptyException.class, () -> game.putPosition(Position.POSITION00));
+    }
+    @Test
+    public void check_board_impression_when_playing_on_two_turns() {
+        game.putPosition(Position.POSITION00);
+        game.putPosition(Position.POSITION01);
+        verify(console).printBoard("x| | \n" + " | | \n" + " | | ");
+        verify(console).printBoard("x|o| \n" + " | | \n" + " | | ");
     }
 }
