@@ -29,7 +29,7 @@ public class TicTacToeShould {
         assertThrows(CellNotEmptyException.class, () -> game.putPosition(Position.POSITION00));
     }
     @Test
-    public void check_board_impression_when_playing_on_two_turns() {
+    public void  check_board_impression_when_playing_on_two_turns() {
         game.putPosition(Position.POSITION00);
         game.putPosition(Position.POSITION01);
         verify(console).printBoard("x| | \n" + " | | \n" + " | | ");
